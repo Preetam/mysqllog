@@ -1,15 +1,13 @@
-package main
+package mysqllog
 
 import (
-	"bufio"
-	"encoding/json"
-	"log"
-	"os"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
 )
+
+type LogEvent map[string]interface{}
 
 var userHostAttributesRe = regexp.MustCompile(`\b(User@Host: [\w\[\]]+ @ (?:)(\w+)?)|(Id:.+)`)
 var attributesRe = regexp.MustCompile(`\b([\w_]+:\s+[^\s]+)\b`)
@@ -157,7 +155,7 @@ func parseEntry(lines []string) LogEvent {
 	for ; i < len(lines); i++ {
 		if strings.HasPrefix(lines[i], "use ") {
 			db := strings.TrimRight(strings.Split(lines[i], " ")[1], ";\n")
-			event["database"] = db
+			event["Database"] = db
 			continue
 		}
 		if strings.HasPrefix(lines[i], "SET ") {
@@ -184,19 +182,4 @@ func parseEntry(lines []string) LogEvent {
 
 	event["Statement"] = strings.TrimSpace(strings.Join(queryLines, "\n"))
 	return event
-}
-
-type LogEvent map[string]interface{}
-
-func main() {
-	p := &Parser{}
-
-	reader := bufio.NewReader(os.Stdin)
-	for line, err := reader.ReadString('\n'); err == nil; line, err = reader.ReadString('\n') {
-		event := p.ConsumeLine(line)
-		if event != nil {
-			b, _ := json.Marshal(event)
-			log.Printf("%s", b)
-		}
-	}
 }
