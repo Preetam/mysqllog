@@ -1,0 +1,1171 @@
+show tables;
+# Time: 2017-12-24T02:41:51.316510Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    12
+# Query_time: 0.019019  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083311;
+create table test (a int, b int);
+# Time: 2017-12-24T02:41:53.213732Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000453  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+use mysql;
+SET timestamp=1514083313;
+SELECT 1;
+# Time: 2017-12-24T02:41:53.214297Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000524  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083313;
+SELECT 1;
+# Time: 2017-12-24T02:41:53.214696Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000377  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083313;
+SELECT 1;
+# Time: 2017-12-24T02:41:53.215261Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000543  Lock_time: 0.000100 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083313;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:41:53.215583Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000298  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083313;
+SELECT 1;
+# Time: 2017-12-24T02:41:53.216419Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000814  Lock_time: 0.000034 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083313;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:42:00.039767Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.021576  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083320;
+SELECT 1;
+# Time: 2017-12-24T02:42:00.088147Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.048325  Lock_time: 0.000128 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083320;
+SELECT count(*) from mysql.rds_history WHERE action = 'disable set master' GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port,master_user,master_log_file ,master_log_pos,master_ssl ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:42:00.105582Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.017383  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083320;
+SELECT 1;
+# Time: 2017-12-24T02:42:00.126000Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.020363  Lock_time: 0.018450 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083320;
+SELECT count(*) from mysql.rds_replication_status WHERE master_host IS NOT NULL and master_port IS NOT NULL GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:42:06.412837Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    12
+# Query_time: 0.008702  Lock_time: 0.004028 Rows_sent: 0  Rows_examined: 0
+use foo;
+SET timestamp=1514083326;
+insert into test values (1,2), (3,4), (5, 6);
+# Time: 2017-12-24T02:42:08.214014Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000445  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+use mysql;
+SET timestamp=1514083328;
+SELECT 1;
+# Time: 2017-12-24T02:42:08.214597Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000540  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083328;
+SELECT 1;
+# Time: 2017-12-24T02:42:08.214990Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000370  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083328;
+SELECT 1;
+# Time: 2017-12-24T02:42:08.215556Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000543  Lock_time: 0.000098 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083328;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:42:08.215893Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000302  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083328;
+SELECT 1;
+# Time: 2017-12-24T02:42:08.217048Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.001133  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083328;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:42:21.805272Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    12
+# Query_time: 0.000008  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+use foo;
+SET timestamp=1514083341;
+# administrator command: Quit;
+# Time: 2017-12-24T02:42:23.213189Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000371  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+use mysql;
+SET timestamp=1514083343;
+SELECT 1;
+# Time: 2017-12-24T02:42:23.213855Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000627  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083343;
+SELECT 1;
+# Time: 2017-12-24T02:42:23.214249Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000370  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083343;
+SELECT 1;
+# Time: 2017-12-24T02:42:23.214843Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000561  Lock_time: 0.000092 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083343;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:42:23.215194Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000328  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083343;
+SELECT 1;
+# Time: 2017-12-24T02:42:23.216136Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000920  Lock_time: 0.000045 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083343;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:42:23.216526Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000366  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083343;
+SELECT 1;
+# Time: 2017-12-24T02:42:23.217010Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000461  Lock_time: 0.000052 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083343;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:42:23.217919Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000885  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083343;
+SELECT 1;
+# Time: 2017-12-24T02:42:23.218187Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000245  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083343;
+select @@session.tx_read_only;
+# Time: 2017-12-24T02:42:23.223181Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.004972  Lock_time: 0.000043 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083343;
+INSERT INTO mysql.rds_heartbeat2(id, value) values (1,1514083343216) ON DUPLICATE KEY UPDATE value = 1514083343216;
+# Time: 2017-12-24T02:42:23.223473Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000265  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083343;
+SELECT 1;
+# Time: 2017-12-24T02:42:23.223726Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000231  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083343;
+select @@session.tx_read_only;
+# Time: 2017-12-24T02:42:23.224520Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000773  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083343;
+COMMIT;
+# Time: 2017-12-24T02:42:25.419770Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000137  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083345;
+select @@version_comment limit 1;
+# Time: 2017-12-24T02:42:28.092350Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000107  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083348;
+SELECT DATABASE();
+# Time: 2017-12-24T02:42:28.109649Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000044  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+use foo;
+SET timestamp=1514083348;
+# administrator command: Init DB;
+# Time: 2017-12-24T02:42:28.124780Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000265  Lock_time: 0.000074 Rows_sent: 7  Rows_examined: 7
+SET timestamp=1514083348;
+show databases;
+# Time: 2017-12-24T02:42:28.137279Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000090  Lock_time: 0.000032 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083348;
+show tables;
+# Time: 2017-12-24T02:42:28.149700Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000103  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083348;
+;
+# Time: 2017-12-24T02:42:30.239815Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000199  Lock_time: 0.000081 Rows_sent: 3  Rows_examined: 3
+SET timestamp=1514083350;
+select * from test;
+# Time: 2017-12-24T02:42:34.979834Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000194  Lock_time: 0.000082 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083354;
+explain select * from test;
+# Time: 2017-12-24T02:42:38.213381Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000371  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+use mysql;
+SET timestamp=1514083358;
+SELECT 1;
+# Time: 2017-12-24T02:42:38.213964Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000540  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083358;
+SELECT 1;
+# Time: 2017-12-24T02:42:38.214353Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000365  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083358;
+SELECT 1;
+# Time: 2017-12-24T02:42:38.214908Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000532  Lock_time: 0.000098 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083358;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:42:38.215226Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000293  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083358;
+SELECT 1;
+# Time: 2017-12-24T02:42:38.216058Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000810  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083358;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:42:50.832708Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000218  Lock_time: 0.000096 Rows_sent: 1  Rows_examined: 0
+use foo;
+SET timestamp=1514083370;
+explain select * from test where a=1;
+# Time: 2017-12-24T02:42:53.213739Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000418  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+use mysql;
+SET timestamp=1514083373;
+SELECT 1;
+# Time: 2017-12-24T02:42:53.214297Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000519  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083373;
+SELECT 1;
+# Time: 2017-12-24T02:42:53.214689Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000363  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083373;
+SELECT 1;
+# Time: 2017-12-24T02:42:53.215277Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000554  Lock_time: 0.000120 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083373;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:42:53.215611Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000310  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083373;
+SELECT 1;
+# Time: 2017-12-24T02:42:53.216095Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000463  Lock_time: 0.000034 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083373;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:42:53.219820Z
+# User@Host: rdsadmin[rdsadmin] @ localhost []  Id:    18
+# Query_time: 0.000969  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083373;
+# administrator command: Statistics;
+# Time: 2017-12-24T02:42:53.219846Z
+# User@Host: rdsadmin[rdsadmin] @ localhost []  Id:    18
+# Query_time: 0.000002  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083373;
+# administrator command: Quit;
+# Time: 2017-12-24T02:42:57.122569Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    17
+# Query_time: 0.000007  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+use foo;
+SET timestamp=1514083377;
+# administrator command: Quit;
+# Time: 2017-12-24T02:43:00.039116Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.025722  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+use mysql;
+SET timestamp=1514083380;
+SELECT 1;
+# Time: 2017-12-24T02:43:00.146818Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.107655  Lock_time: 0.000125 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083380;
+SELECT count(*) from mysql.rds_history WHERE action = 'disable set master' GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port,master_user,master_log_file ,master_log_pos,master_ssl ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:43:00.147222Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000358  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083380;
+SELECT 1;
+# Time: 2017-12-24T02:43:00.152923Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.005678  Lock_time: 0.000087 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083380;
+SELECT count(*) from mysql.rds_replication_status WHERE master_host IS NOT NULL and master_port IS NOT NULL GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:43:08.213876Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000389  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083388;
+SELECT 1;
+# Time: 2017-12-24T02:43:08.214431Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000514  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083388;
+SELECT 1;
+# Time: 2017-12-24T02:43:08.214828Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000375  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083388;
+SELECT 1;
+# Time: 2017-12-24T02:43:08.215379Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000529  Lock_time: 0.000097 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083388;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:43:08.215704Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000294  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083388;
+SELECT 1;
+# Time: 2017-12-24T02:43:08.216589Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000830  Lock_time: 0.000034 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083388;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:43:23.213710Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000389  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083403;
+SELECT 1;
+# Time: 2017-12-24T02:43:23.214278Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000526  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083403;
+SELECT 1;
+# Time: 2017-12-24T02:43:23.214679Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000378  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083403;
+SELECT 1;
+# Time: 2017-12-24T02:43:23.215250Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000549  Lock_time: 0.000114 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083403;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:43:23.215571Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000296  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083403;
+SELECT 1;
+# Time: 2017-12-24T02:43:23.216385Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000793  Lock_time: 0.000044 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083403;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:43:38.213013Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000383  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083418;
+SELECT 1;
+# Time: 2017-12-24T02:43:38.213575Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000519  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083418;
+SELECT 1;
+# Time: 2017-12-24T02:43:38.213989Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000392  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083418;
+SELECT 1;
+# Time: 2017-12-24T02:43:38.214536Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000524  Lock_time: 0.000100 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083418;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:43:38.214859Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000299  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083418;
+SELECT 1;
+# Time: 2017-12-24T02:43:38.215704Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000823  Lock_time: 0.000032 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083418;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:43:53.213184Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000364  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083433;
+SELECT 1;
+# Time: 2017-12-24T02:43:53.213781Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000557  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083433;
+SELECT 1;
+# Time: 2017-12-24T02:43:53.214149Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000345  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083433;
+SELECT 1;
+# Time: 2017-12-24T02:43:53.214723Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000552  Lock_time: 0.000096 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083433;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:43:53.215045Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000292  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083433;
+SELECT 1;
+# Time: 2017-12-24T02:43:53.215902Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000835  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083433;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:44:00.037553Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.022922  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083440;
+SELECT 1;
+# Time: 2017-12-24T02:44:00.096553Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.058948  Lock_time: 0.020278 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083440;
+SELECT count(*) from mysql.rds_history WHERE action = 'disable set master' GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port,master_user,master_log_file ,master_log_pos,master_ssl ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:44:00.106638Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.010029  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083440;
+SELECT 1;
+# Time: 2017-12-24T02:44:00.123411Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.016715  Lock_time: 0.000118 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083440;
+SELECT count(*) from mysql.rds_replication_status WHERE master_host IS NOT NULL and master_port IS NOT NULL GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:44:08.213876Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000409  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083448;
+SELECT 1;
+# Time: 2017-12-24T02:44:08.214439Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000521  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083448;
+SELECT 1;
+# Time: 2017-12-24T02:44:08.214830Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000368  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083448;
+SELECT 1;
+# Time: 2017-12-24T02:44:08.215389Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000536  Lock_time: 0.000101 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083448;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:44:08.215707Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000293  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083448;
+SELECT 1;
+# Time: 2017-12-24T02:44:08.216598Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000869  Lock_time: 0.000035 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083448;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:44:10.959308Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.000087  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083450;
+select @@version_comment limit 1;
+# Time: 2017-12-24T02:44:13.099306Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.000076  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083453;
+flush logs;
+# Time: 2017-12-24T02:44:23.213412Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000417  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083463;
+SELECT 1;
+# Time: 2017-12-24T02:44:23.214013Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000544  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083463;
+SELECT 1;
+# Time: 2017-12-24T02:44:23.214406Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000370  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083463;
+SELECT 1;
+# Time: 2017-12-24T02:44:23.214966Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000539  Lock_time: 0.000095 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083463;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:44:23.215284Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000294  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083463;
+SELECT 1;
+# Time: 2017-12-24T02:44:23.216122Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000818  Lock_time: 0.000032 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083463;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:44:38.213721Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000401  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083478;
+SELECT 1;
+# Time: 2017-12-24T02:44:38.214306Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000548  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083478;
+SELECT 1;
+# Time: 2017-12-24T02:44:38.214695Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000368  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083478;
+SELECT 1;
+# Time: 2017-12-24T02:44:38.215261Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000537  Lock_time: 0.000096 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083478;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:44:38.215568Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000284  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083478;
+SELECT 1;
+# Time: 2017-12-24T02:44:38.216430Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000842  Lock_time: 0.000030 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083478;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:44:53.213672Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000390  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083493;
+SELECT 1;
+# Time: 2017-12-24T02:44:53.214267Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000554  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083493;
+SELECT 1;
+# Time: 2017-12-24T02:44:53.214651Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000361  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083493;
+SELECT 1;
+# Time: 2017-12-24T02:44:53.215208Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000534  Lock_time: 0.000099 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083493;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:44:53.215581Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000348  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083493;
+SELECT 1;
+# Time: 2017-12-24T02:44:53.216447Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000843  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083493;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:45:00.137405Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.061222  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083500;
+SELECT 1;
+# Time: 2017-12-24T02:45:00.310075Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.172567  Lock_time: 0.000128 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083500;
+SELECT count(*) from mysql.rds_history WHERE action = 'disable set master' GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port,master_user,master_log_file ,master_log_pos,master_ssl ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:45:00.337231Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.027097  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083500;
+SELECT 1;
+# Time: 2017-12-24T02:45:00.393058Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.055769  Lock_time: 0.000116 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083500;
+SELECT count(*) from mysql.rds_replication_status WHERE master_host IS NOT NULL and master_port IS NOT NULL GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:45:00.393592Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000475  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083500;
+SELECT 1;
+# Time: 2017-12-24T02:45:00.393951Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000335  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083500;
+select @@session.tx_read_only;
+/rdsdbbin/mysql/bin/mysqld, Version: 5.7.16-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /tmp/mysql.sock
+Time                 Id Command    Argument
+# Time: 2017-12-24T02:45:00.425114Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.031139  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+use mysql;
+SET timestamp=1514083500;
+flush logs;
+# Time: 2017-12-24T02:45:00.437810Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.012652  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083500;
+SELECT 1;
+# Time: 2017-12-24T02:45:00.450048Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.012189  Lock_time: 0.000114 Rows_sent: 1  Rows_examined: 984
+SET timestamp=1514083500;
+SHOW GLOBAL VARIABLES LIKE 'mysql_cipher_stats_flush_period_in_seconds';
+# Time: 2017-12-24T02:45:06.447598Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007372  Lock_time: 0.000071 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083506;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:08.213256Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000383  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083508;
+SELECT 1;
+# Time: 2017-12-24T02:45:08.213897Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000600  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083508;
+SELECT 1;
+# Time: 2017-12-24T02:45:08.214294Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000373  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083508;
+SELECT 1;
+# Time: 2017-12-24T02:45:08.214855Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000528  Lock_time: 0.000098 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083508;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:45:08.215178Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000298  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083508;
+SELECT 1;
+# Time: 2017-12-24T02:45:08.216317Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.001116  Lock_time: 0.000032 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083508;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:45:23.213435Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000380  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083523;
+SELECT 1;
+# Time: 2017-12-24T02:45:23.214057Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000578  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083523;
+SELECT 1;
+# Time: 2017-12-24T02:45:23.214457Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000377  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083523;
+SELECT 1;
+# Time: 2017-12-24T02:45:23.214960Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000482  Lock_time: 0.000094 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083523;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:45:23.215267Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000285  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083523;
+SELECT 1;
+# Time: 2017-12-24T02:45:23.216086Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000797  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083523;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:45:25.096776Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000378  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083525;
+SELECT 1;
+# Time: 2017-12-24T02:45:25.097584Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000764  Lock_time: 0.000061 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083525;
+SELECT NAME, VALUE FROM mysql.rds_configuration;
+# Time: 2017-12-24T02:45:25.108859Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000354  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083525;
+SELECT 1;
+# Time: 2017-12-24T02:45:25.109148Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000251  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083525;
+select @@session.tx_read_only;
+# Time: 2017-12-24T02:45:25.115834Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.006663  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083525;
+PURGE BINARY LOGS TO 'mysql-bin-changelog.000011';
+# Time: 2017-12-24T02:45:29.742584Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.006950  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083529;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:30.042096Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.017680  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083530;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:30.267903Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007256  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083530;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:30.502310Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.006719  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083530;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:30.735501Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007342  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083530;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:30.985142Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.006964  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083530;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:31.172253Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.006515  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083531;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:31.384872Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.006647  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083531;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:31.585714Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007557  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083531;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:31.765691Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007415  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083531;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:31.981574Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007228  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083531;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:32.135554Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007308  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083532;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:32.332962Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007094  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083532;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:32.527348Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.006716  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083532;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:32.832560Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.006911  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083532;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:33.030731Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.007486  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083533;
+CALL mysql.rds_rotate_slow_log;
+# Time: 2017-12-24T02:45:38.213204Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000421  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083538;
+SELECT 1;
+# Time: 2017-12-24T02:45:38.213908Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000589  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083538;
+SELECT 1;
+# Time: 2017-12-24T02:45:38.215083Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000396  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083538;
+SELECT 1;
+# Time: 2017-12-24T02:45:38.215667Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000562  Lock_time: 0.000099 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083538;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:45:38.215987Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000293  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083538;
+SELECT 1;
+# Time: 2017-12-24T02:45:38.216843Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000815  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083538;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:45:53.213835Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000427  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083553;
+SELECT 1;
+# Time: 2017-12-24T02:45:53.214406Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000518  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083553;
+SELECT 1;
+# Time: 2017-12-24T02:45:53.214791Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000363  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083553;
+SELECT 1;
+# Time: 2017-12-24T02:45:53.215352Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000539  Lock_time: 0.000102 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083553;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:45:53.215667Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000291  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083553;
+SELECT 1;
+# Time: 2017-12-24T02:45:53.216489Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000799  Lock_time: 0.000034 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083553;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:45:56.976239Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.000080  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083556;
+flush tables with read lock;
+# Time: 2017-12-24T02:46:00.050322Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.038446  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083560;
+SELECT 1;
+# Time: 2017-12-24T02:46:00.096779Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.046373  Lock_time: 0.000130 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083560;
+SELECT count(*) from mysql.rds_history WHERE action = 'disable set master' GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port,master_user,master_log_file ,master_log_pos,master_ssl ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:46:00.109738Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.012906  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083560;
+SELECT 1;
+# Time: 2017-12-24T02:46:00.123111Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.013309  Lock_time: 0.000120 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083560;
+SELECT count(*) from mysql.rds_replication_status WHERE master_host IS NOT NULL and master_port IS NOT NULL GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:46:06.991483Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.000066  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083566;
+lock database mysql;
+# Time: 2017-12-24T02:46:08.213256Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000386  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083568;
+SELECT 1;
+# Time: 2017-12-24T02:46:08.213850Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000554  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083568;
+SELECT 1;
+# Time: 2017-12-24T02:46:08.214270Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000396  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083568;
+SELECT 1;
+# Time: 2017-12-24T02:46:08.214841Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000533  Lock_time: 0.000099 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083568;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:46:08.215159Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000293  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083568;
+SELECT 1;
+# Time: 2017-12-24T02:46:08.216037Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000857  Lock_time: 0.000035 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083568;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:46:12.731498Z
+# User@Host: root[root] @ pool-70-106-0-0.clppva.fios.verizon.net [70.106.0.0]  Id:    19
+# Query_time: 0.000063  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083572;
+asdf;
+# Time: 2017-12-24T02:46:23.213181Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000401  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083583;
+SELECT 1;
+# Time: 2017-12-24T02:46:23.213783Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000560  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083583;
+SELECT 1;
+# Time: 2017-12-24T02:46:23.214199Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000392  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083583;
+SELECT 1;
+# Time: 2017-12-24T02:46:23.214773Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000540  Lock_time: 0.000098 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083583;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:46:23.215087Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000290  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083583;
+SELECT 1;
+# Time: 2017-12-24T02:46:23.215935Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000826  Lock_time: 0.000035 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083583;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:46:38.213187Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000431  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083598;
+SELECT 1;
+# Time: 2017-12-24T02:46:38.213785Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000553  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083598;
+SELECT 1;
+# Time: 2017-12-24T02:46:38.214200Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000391  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083598;
+SELECT 1;
+# Time: 2017-12-24T02:46:38.214773Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000538  Lock_time: 0.000098 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083598;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:46:38.215099Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000301  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083598;
+SELECT 1;
+# Time: 2017-12-24T02:46:38.215940Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000819  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083598;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:46:53.213304Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000400  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083613;
+SELECT 1;
+# Time: 2017-12-24T02:46:53.213949Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000595  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083613;
+SELECT 1;
+# Time: 2017-12-24T02:46:53.214345Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000373  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083613;
+SELECT 1;
+# Time: 2017-12-24T02:46:53.214929Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000562  Lock_time: 0.000099 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083613;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:46:53.215247Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000294  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083613;
+SELECT 1;
+# Time: 2017-12-24T02:46:53.216073Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000804  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083613;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:47:00.208287Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.146836  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083620;
+SELECT 1;
+# Time: 2017-12-24T02:47:00.209516Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.001181  Lock_time: 0.000113 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083620;
+SELECT count(*) from mysql.rds_history WHERE action = 'disable set master' GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port,master_user,master_log_file ,master_log_pos,master_ssl ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:47:00.209905Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000360  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083620;
+SELECT 1;
+# Time: 2017-12-24T02:47:00.211575Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.001646  Lock_time: 0.000057 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1514083620;
+SELECT count(*) from mysql.rds_replication_status WHERE master_host IS NOT NULL and master_port IS NOT NULL GROUP BY action_timestamp,called_by_user,action,mysql_version,master_host,master_port ORDER BY action_timestamp LIMIT 1;
+# Time: 2017-12-24T02:47:08.213871Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000433  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083628;
+SELECT 1;
+# Time: 2017-12-24T02:47:08.214447Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000537  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083628;
+SELECT 1;
+# Time: 2017-12-24T02:47:08.214833Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000363  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083628;
+SELECT 1;
+# Time: 2017-12-24T02:47:08.215391Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000535  Lock_time: 0.000101 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083628;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:47:08.215721Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000306  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083628;
+SELECT 1;
+# Time: 2017-12-24T02:47:08.216550Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000807  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083628;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:47:23.213360Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000398  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+SELECT 1;
+# Time: 2017-12-24T02:47:23.213957Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000546  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+SELECT 1;
+# Time: 2017-12-24T02:47:23.214370Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000390  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+SELECT 1;
+# Time: 2017-12-24T02:47:23.214940Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000548  Lock_time: 0.000100 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083643;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:47:23.215280Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000316  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+SELECT 1;
+# Time: 2017-12-24T02:47:23.216208Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000905  Lock_time: 0.000033 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083643;
+SELECT value FROM mysql.rds_heartbeat2;
+# Time: 2017-12-24T02:47:23.216595Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000364  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+SELECT 1;
+# Time: 2017-12-24T02:47:23.217064Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000446  Lock_time: 0.000053 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083643;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:47:23.217981Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000887  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+SELECT 1;
+# Time: 2017-12-24T02:47:23.218251Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000247  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+select @@session.tx_read_only;
+# Time: 2017-12-24T02:47:23.223177Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.004904  Lock_time: 0.000044 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083643;
+INSERT INTO mysql.rds_heartbeat2(id, value) values (1,1514083643216) ON DUPLICATE KEY UPDATE value = 1514083643216;
+# Time: 2017-12-24T02:47:23.223480Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000275  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+SELECT 1;
+# Time: 2017-12-24T02:47:23.223743Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000241  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083643;
+select @@session.tx_read_only;
+# Time: 2017-12-24T02:47:23.224666Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000901  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1514083643;
+COMMIT;
+# Time: 2017-12-24T02:47:38.213540Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000388  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083658;
+SELECT 1;
+# Time: 2017-12-24T02:47:38.214115Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000534  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083658;
+SELECT 1;
+# Time: 2017-12-24T02:47:38.214501Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000363  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083658;
+SELECT 1;
+# Time: 2017-12-24T02:47:38.215042Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000519  Lock_time: 0.000097 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083658;
+SELECT count(*) from information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'rds_heartbeat2';
+# Time: 2017-12-24T02:47:38.215361Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000289  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1514083658;
+SELECT 1;
+# Time: 2017-12-24T02:47:38.216177Z
+# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3
+# Query_time: 0.000795  Lock_time: 0.000034 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1514083658;
+SELECT value FROM mysql.rds_heartbeat2;
