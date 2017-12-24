@@ -7,56 +7,21 @@ import (
 	"time"
 )
 
+// LogEvent represents a slow query log event.
+// "User", "Host", "Timestamp" (from SET timestamp as a time.Time), and "Statement"
+// all should usually be present. Other attributes are set if found.
+// Numbers are float64 or int64. Values of "Yes" or "No" are converted to bools.
 type LogEvent map[string]interface{}
 
-var userHostAttributesRe = regexp.MustCompile(`\b(User@Host: [\w\[\]]+ @ (?:)(\w+)?)|(Id:.+)`)
-var attributesRe = regexp.MustCompile(`\b([\w_]+:\s+[^\s]+)\b`)
-
-const (
-	attributeTypeFloat = iota
-	attributeTypeInt
-	attributeTypeString
-	attributeTypeBool
-)
-
-var attributeTypes = map[string]int{
-	"Thread_id":             attributeTypeInt,
-	"Schema":                attributeTypeString,
-	"Last_errno":            attributeTypeInt,
-	"Killed":                attributeTypeInt,
-	"Query_time":            attributeTypeFloat,
-	"Lock_time":             attributeTypeFloat,
-	"Rows_sent":             attributeTypeInt,
-	"Rows_examined":         attributeTypeInt,
-	"Rows_affected":         attributeTypeInt,
-	"Rows_read":             attributeTypeInt,
-	"Bytes_sent":            attributeTypeInt,
-	"Tmp_tables":            attributeTypeInt,
-	"Tmp_disk_tables":       attributeTypeInt,
-	"Tmp_table_sizes":       attributeTypeInt,
-	"InnoDB_trx_id":         attributeTypeString,
-	"QC_Hit":                attributeTypeBool,
-	"Full_scan":             attributeTypeBool,
-	"Full_join":             attributeTypeBool,
-	"Tmp_table":             attributeTypeBool,
-	"Tmp_table_on_disk":     attributeTypeBool,
-	"Filesort":              attributeTypeBool,
-	"Filesort_on_disk":      attributeTypeBool,
-	"Merge_passes":          attributeTypeInt,
-	"InnoDB_IO_r_ops":       attributeTypeInt,
-	"InnoDB_IO_r_bytes":     attributeTypeInt,
-	"InnoDB_IO_r_wait":      attributeTypeFloat,
-	"InnoDB_rec_lock_wait":  attributeTypeFloat,
-	"InnoDB_queue_wait":     attributeTypeFloat,
-	"InnoDB_pages_distinct": attributeTypeInt,
-}
-
+// Parser is a MySQL slow query log format parser.
 type Parser struct {
 	inHeader bool
 	inQuery  bool
 	lines    []string
 }
 
+// ConsumeLine consumes a line and returns a LogEvent if
+// the parser recognizes a completed event.
 func (p *Parser) ConsumeLine(line string) *LogEvent {
 	if strings.HasPrefix(line, "#") {
 		// Comment line
@@ -88,6 +53,7 @@ func (p *Parser) ConsumeLine(line string) *LogEvent {
 	return nil
 }
 
+// Flush processes any pending lines and returns a LogEvent if one is complete.
 func (p *Parser) Flush() *LogEvent {
 	if !p.inQuery {
 		return nil
@@ -97,6 +63,10 @@ func (p *Parser) Flush() *LogEvent {
 	return &event
 }
 
+var userHostAttributesRe = regexp.MustCompile(`\b(User@Host: [\w\[\]]+ @ (?:)(\w+)?)|(Id:.+)`)
+var attributesRe = regexp.MustCompile(`\b([\w_]+:\s+[^\s]+)\b`)
+
+// parseEntry actually parses lines that belong to a log event.
 func parseEntry(lines []string) LogEvent {
 	event := LogEvent{}
 	var i int
@@ -138,7 +108,7 @@ func parseEntry(lines []string) LogEvent {
 			case attributeTypeInt:
 				v, err := strconv.ParseInt(parts[1], 10, 64)
 				if err == nil {
-					attributeValue = v
+					attributeValue = int64(v)
 				}
 			}
 
@@ -151,7 +121,6 @@ func parseEntry(lines []string) LogEvent {
 	}
 
 	// See if we have lines to skip
-
 	for ; i < len(lines); i++ {
 		if strings.HasPrefix(lines[i], "use ") {
 			db := strings.TrimRight(strings.Split(lines[i], " ")[1], ";\n")
@@ -163,7 +132,7 @@ func parseEntry(lines []string) LogEvent {
 				unixTimestampString := strings.TrimRight(strings.Split(lines[i], "=")[1], ";\n")
 				i, err := strconv.ParseInt(unixTimestampString, 10, 64)
 				if err == nil {
-					event["Timestamp"] = time.Unix(i, 0)
+					event["Timestamp"] = time.Unix(i, 0).UTC()
 				}
 			}
 			continue
