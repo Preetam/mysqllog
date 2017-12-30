@@ -2,7 +2,9 @@ package mysqllog
 
 import (
 	"bufio"
+	"bytes"
 	"encoding/json"
+	"io/ioutil"
 	"reflect"
 	"strings"
 	"testing"
@@ -23,11 +25,11 @@ SELECT count(*) from mysql.rds_replication_status WHERE master_host IS NOT NULL 
 #
 `
 
-func TestParser(t *testing.T) {
+func TestParseSingleEvent(t *testing.T) {
 	p := &Parser{}
 	r := strings.NewReader(content)
 	reader := bufio.NewReader(r)
-	var parsedEvent *LogEvent
+	var parsedEvent LogEvent
 	for line, err := reader.ReadString('\n'); err == nil; line, err = reader.ReadString('\n') {
 		event := p.ConsumeLine(line)
 		if event != nil {
@@ -38,7 +40,7 @@ func TestParser(t *testing.T) {
 		t.Fatal("expected to parse an event")
 	}
 
-	expectedEvent := &LogEvent{
+	expectedEvent := LogEvent{
 		"User":          "rdsadmin",
 		"Host":          "localhost",
 		"Database":      "foo",
@@ -52,6 +54,43 @@ func TestParser(t *testing.T) {
 
 	if !reflect.DeepEqual(parsedEvent, expectedEvent) {
 		t.Errorf("expected event\n%v\n, got\n%v", jsonPrint(expectedEvent), jsonPrint(parsedEvent))
+	}
+}
+
+func TestParseRDSFile(t *testing.T) {
+	p := &Parser{}
+	b, err := ioutil.ReadFile("./_test/rds.txt")
+	if err != nil {
+		t.Fatal(err)
+	}
+	reader := bufio.NewReader(bytes.NewReader(b))
+	parsedEvents := []LogEvent{}
+	for line, err := reader.ReadString('\n'); err == nil; line, err = reader.ReadString('\n') {
+		event := p.ConsumeLine(line)
+		if event != nil {
+			parsedEvents = append(parsedEvents, event)
+		}
+	}
+	lastEvent := p.Flush()
+	if lastEvent != nil {
+		parsedEvents = append(parsedEvents, lastEvent)
+	}
+
+	numExpectedEvents := 231
+	if len(parsedEvents) != numExpectedEvents {
+		t.Errorf("expected %d events but got %d", numExpectedEvents, len(parsedEvents))
+	}
+
+	expectedSelects := 191
+	seenSelects := 0
+	for _, e := range parsedEvents {
+		if strings.HasPrefix(strings.ToLower(e["Statement"].(string)), "select ") {
+			seenSelects++
+		}
+	}
+
+	if expectedSelects != seenSelects {
+		t.Errorf("expected %d selects but got %d", expectedSelects, seenSelects)
 	}
 }
 
