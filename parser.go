@@ -22,7 +22,7 @@ type Parser struct {
 
 // ConsumeLine consumes a line and returns a LogEvent if
 // the parser recognizes a completed event.
-func (p *Parser) ConsumeLine(line string) *LogEvent {
+func (p *Parser) ConsumeLine(line string) LogEvent {
 	if strings.HasPrefix(line, "#") {
 		// Comment line
 		if p.inQuery {
@@ -31,7 +31,7 @@ func (p *Parser) ConsumeLine(line string) *LogEvent {
 			p.lines = append(p.lines[:0], line)
 			p.inQuery = false
 			p.inHeader = true
-			return &event
+			return event
 		}
 		p.inHeader = true
 		p.lines = append(p.lines, line)
@@ -54,13 +54,13 @@ func (p *Parser) ConsumeLine(line string) *LogEvent {
 }
 
 // Flush processes any pending lines and returns a LogEvent if one is complete.
-func (p *Parser) Flush() *LogEvent {
+func (p *Parser) Flush() LogEvent {
 	if !p.inQuery {
 		return nil
 	}
 	event := parseEntry(p.lines)
 	p.lines = p.lines[:0]
-	return &event
+	return event
 }
 
 var userHostAttributesRe = regexp.MustCompile(`\b(User@Host: [\w\[\]]+ @ (?:)(\w+)?)|(Id:.+)`)
