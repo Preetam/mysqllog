@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
-	"time"
+	// "time"
 )
 
 // LogEvent represents a slow query log event.
@@ -63,7 +63,8 @@ func (p *Parser) Flush() LogEvent {
 	return event
 }
 
-var userHostAttributesRe = regexp.MustCompile(`\b(User@Host: [\w\[\]]+ @ (?:)(\w+)?)|(Id:.+)`)
+//var userHostAttributesRe = regexp.MustCompile(`\b(User@Host: [\w\[\]]+ @ (?:)(\w+)?)|(Id:.+)`)
+var userHostAttributesRe = regexp.MustCompile(`\[([\S]+)\]`)
 var attributesRe = regexp.MustCompile(`\b([\w_]+:\s+[^\s]+)\b`)
 
 // parseEntry actually parses lines that belong to a log event.
@@ -77,7 +78,14 @@ func parseEntry(lines []string) LogEvent {
 		}
 		if strings.HasPrefix(line, "# User@Host") {
 			matches := userHostAttributesRe.FindAllString(line, -1)
-			for _, match := range matches {
+			if len(matches) == 1{
+				event["User"] = strings.Replace(strings.Replace(matches[0],"]","", -1),"[","", -1)
+				event["Host"] = "localhost"
+			}else{
+				event["User"] = strings.Replace(strings.Replace(matches[0],"]","", -1),"[","", -1)
+				event["Host"] = strings.Replace(strings.Replace(matches[1],"]","", -1),"[","", -1)
+			}
+			/*for _, match := range matches {
 				parts := strings.Split(match, ": ")
 				switch parts[0] {
 				case "User@Host":
@@ -85,7 +93,7 @@ func parseEntry(lines []string) LogEvent {
 					event["User"] = strings.TrimSpace(strings.Split(userHostParts[0], "[")[0])
 					event["Host"] = strings.TrimSpace(strings.Split(userHostParts[1], "[")[0])
 				}
-			}
+			}*/
 			continue
 		}
 		matches := attributesRe.FindAllString(line, -1)
@@ -130,10 +138,11 @@ func parseEntry(lines []string) LogEvent {
 		if strings.HasPrefix(lines[i], "SET ") {
 			if strings.HasPrefix(lines[i], "SET timestamp=") {
 				unixTimestampString := strings.TrimRight(strings.Split(lines[i], "=")[1], ";\n")
-				i, err := strconv.ParseInt(unixTimestampString, 10, 64)
+				event["Timestamp"] = unixTimestampString
+				/*i, err := strconv.ParseInt(unixTimestampString, 10, 64)
 				if err == nil {
 					event["Timestamp"] = time.Unix(i, 0).UTC()
-				}
+				}*/
 			}
 			continue
 		}
