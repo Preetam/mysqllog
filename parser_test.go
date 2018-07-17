@@ -43,6 +43,7 @@ func TestParseSingleEvent(t *testing.T) {
 	expectedEvent := LogEvent{
 		"User":          "rdsadmin",
 		"Host":          "localhost",
+		"IP":            "127.0.0.1",
 		"Database":      "foo",
 		"Query_time":    float64(0.020363),
 		"Lock_time":     float64(0.018450),
@@ -54,6 +55,46 @@ func TestParseSingleEvent(t *testing.T) {
 
 	if !reflect.DeepEqual(parsedEvent, expectedEvent) {
 		t.Errorf("expected event\n%v\n, got\n%v", jsonPrint(expectedEvent), jsonPrint(parsedEvent))
+	}
+}
+
+func TestParseUserHostLine(t *testing.T) {
+	type TestCase struct {
+		Line     string
+		Expected map[string]string
+	}
+
+	cases := []TestCase{
+		{
+			Line: "# User@Host: rdsadmin[rdsadmin] @ localhost [127.0.0.1]  Id:     3",
+			Expected: map[string]string{
+				"User": "rdsadmin",
+				"Host": "localhost",
+				"IP":   "127.0.0.1",
+			},
+		},
+		{
+			Line: "# User@Host: rdsadmin[rdsadmin] @ localhost []  Id:     3",
+			Expected: map[string]string{
+				"User": "rdsadmin",
+				"Host": "localhost",
+			},
+		},
+		{
+			Line: "# User@Host: rdsadmin[rdsadmin] @  [127.0.0.1]  Id:     3",
+			Expected: map[string]string{
+				"User": "rdsadmin",
+				"Host": "127.0.0.1",
+				"IP":   "127.0.0.1",
+			},
+		},
+	}
+
+	for _, c := range cases {
+		result := parseUserHostLine(c.Line)
+		if !reflect.DeepEqual(result, c.Expected) {
+			t.Errorf("expected %v, got %v", c.Expected, result)
+		}
 	}
 }
 
